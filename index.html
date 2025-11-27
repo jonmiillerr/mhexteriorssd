@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>M&H Exteriors | Exterior Finishing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="M&H Exteriors – window and door coverings, metal soffit and fascia, and custom break work.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #0b1220;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    nav a {
+      margin-left: 16px;
+      font-size: 0.95rem;
+      color: #cbd5f5;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .hero-heading {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      margin-bottom: 10px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: 1px solid #4b5563;
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid #1f2937;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.65);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .tag-list {
+      margin-top: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      margin: 3px 3px 0 0;
+      color: #e5e7eb;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    section p {
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .list {
+      margin-top: 8px;
+    }
+
+    .list-item {
+      margin-left: 18px;
+      margin-bottom: 6px;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    .highlight {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    /* Gallery styles */
+    .gallery {
+      margin-top: 8px;
+    }
+
+    .gallery-intro {
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid #1f2937;
+      background: #020617;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .contact-box {
+      background: #020617;
+      border-radius: 18px;
+      padding: 20px;
+      border: 1px solid #1f2937;
+      max-width: 520px;
+    }
+
+    .contact-row {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .label {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    footer {
+      border-top: 1px solid #1f2937;
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      M&amp;H <span>Exteriors</span>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">What I Do</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">Exterior finishing & metal work</div>
+        <h1 class="hero-heading">Clean, durable exteriors done right.</h1>
+        <p class="hero-sub">
+          M&amp;H Exteriors specializes in window and door coverings, metal soffit and fascia,
+          and custom break work. Focused on clean lines, precise details, and work that lasts.
+        </p>
+        <div class="hero-cta">
+          <a href="tel:16054308016">
+            <button class="btn-primary">Call / Text: 605-430-8016</button>
+          </a>
+          <a href="#about">
+            <button class="btn-outline">Learn more about my work</button>
+          </a>
+        </div>
+      </div>
+      <aside class="card">
+        <h2>Serving homeowners & contractors</h2>
+        <p>
+          Whether it’s updating an existing home or finishing new construction, I focus on
+          tight fits, straight lines, and a clean finished look around windows, doors, and rooflines.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Window &amp; door trim</span>
+          <span class="tag">Metal soffit</span>
+          <span class="tag">Fascia</span>
+          <span class="tag">Custom break work</span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About M&amp;H Exteriors</h2>
+      <p>
+        M&amp;H Exteriors is a small exterior finishing business that takes pride in
+        detail work. My focus is on the parts of the home that people notice up close:
+        around your windows and doors, along the roofline, and anywhere clean metal work
+        makes a difference.
+      </p>
+      <p>
+        I care about <span class="highlight">straight lines, clean cuts, and solid installs</span>.
+        The goal is simple: exteriors that not only look good from the street, but also hold up over time.
+      </p>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section id="work">
+      <h2>What I Do</h2>
+      <p>
+        I don’t try to do everything. I stick to what I’m good at and do it right the first time.
+      </p>
+      <div class="list">
+        <p class="list-item">
+          • <span class="highlight">Window &amp; door coverings:</span> metal trim and wraps that protect
+          framing and give your windows and doors a finished, professional look.
+        </p>
+        <p class="list-item">
+          • <span class="highlight">Metal soffit:</span> clean, vented soffit systems that help your home breathe
+          while keeping the underside of your overhangs sharp and tidy.
+        </p>
+        <p class="list-item">
+          • <span class="highlight">Fascia:</span> durable metal fascia that lines up tight and straight along the roof edge.
+        </p>
+        <p class="list-item">
+          • <span class="highlight">Break work:</span> custom metal pieces bent to fit the job, from trims and flashings
+          to small details that finish off a project the right way.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS / GALLERY -->
+    <section id="projects">
+      <h2>Recent Project</h2>
+      <p class="gallery-intro">
+        A cabin exterior with new metal fascia and clean lines around the roof and deck. Photos from one of my recent jobs.
+      </p>
+      <div class="gallery">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="cabin-1.jpg" alt="Cabin exterior deck and upper level" />
+          </div>
+          <div class="gallery-item">
+            <img src="cabin-2.jpg" alt="Cabin exterior with railings and metal details" />
+          </div>
+          <div class="gallery-item">
+            <img src="cabin-3.jpg" alt="Side view of cabin with soffit and fascia work" />
+          </div>
+          <div class="gallery-item">
+            <img src="cabin-4.jpg" alt="Cabin gable end with horizontal siding and fascia" />
+          </div>
+          <div class="gallery-item">
+            <img src="cabin-5.jpg" alt="Cabin porch and deck with exterior finishing" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        If you’d like to talk about a project, send photos, or get a rough idea of what’s possible,
+        the best way to reach me is by call or text.
+      </p>
+      <div class="contact-box">
+        <div class="contact-row">
+          <span class="label">Phone / Text:</span>
+          <a href="tel:16054308016">605-430-8016</a>
+        </div>
+        <div class="contact-row">
+          <span class="label">Email:</span>
+          <a href="mailto:MH11016@yahoo.com">MH11016@yahoo.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="label">Hours:</span>
+          <span>By appointment</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> M&amp;H Exteriors. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
